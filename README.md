@@ -1,7 +1,7 @@
 SxGeo IP base
 ============
 
-Extension for Cotonti CMF. Integration of SxGeo IP base
+Extension for Cotonti CMF. Integration of SxGeo IP base (geo names supplied in Russian)
 
 Description
 -----------
