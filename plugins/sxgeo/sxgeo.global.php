@@ -19,24 +19,24 @@ defined('COT_CODE') or die('Wrong URL.');
 $plug_name = 'sxgeo';
 
 //register user IP for globals use
-if ($cfg['plugin']['sxgeo']['debuglocal'] && $usr['ip']=='127.0.0.1') {
+if (Cot::$cfg['plugin']['sxgeo']['debuglocal'] && Cot::$usr['ip'] == '127.0.0.1') {
 	// to test in localhost mode
 	$sx_debug_local = true;
 	// generaing test IP
 	$sx_ip = rand(20, 200).'.'.rand(20, 200).'.'.rand(20, 200).'.'.rand(1, 200);
-	//$sx_ip = '186.139.196.83';
+
 } else {
-	$sx_ip = $usr['ip'];
+	$sx_ip = Cot::$usr['ip'];
 }
 
 //auto init Sx globals to use in templates
-if ($cfg['plugin']['sxgeo']['autoload']) {
+if (Cot::$cfg['plugin']['sxgeo']['autoload']) {
 	$sx_autoload = true;
 	require_once cot_incfile('sxgeo', 'plug');
 	sx_getCountry($sx_ip);
 	sx_getCity($sx_ip);
 	$tt = new XTemplate(cot_tplfile('sxgeo', 'plug'));
 	$tt->parse();
-	$sx_infoblock =  $tt->text();
+	$sx_infoblock = $tt->text();
 }
 

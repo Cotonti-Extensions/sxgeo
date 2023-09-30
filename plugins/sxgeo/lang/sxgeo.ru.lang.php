@@ -1,20 +1,20 @@
 <?php
 /**
  * Localization file for SxGeo IP base
+ *
+ * @package sxgeo
  * @author Andrey Matsovkin
- * @copyright Copyright (c) 2011-2013
- * @license Distributed under BSD license.
- * Made with «Extension Template» (https://github.com/macik/cot-extension_template)
-*/
+ * @author Kalnov Alexey <kalnovalexey@yandex.ru>
+ */
 
 defined('COT_CODE') or die('Wrong URL');
 
 $L['plu_title'] = 'SxGeo IP база.';
 
-$L['info_desc'] ='Подключение базы SxGeo. Привязка IP адресов к гео-координатам'; //
-if (version_compare($cfg['version'], '0.9.12') > 0) // still buggy in Siena 0.9.12
-	$L['info_notes'] = 'Оригинальная база адресов собрана авторами http://sypexgeo.net/ и распространяется под лицензией BSD.
-	<br />Если мои плагины приносят вам пользу вы можете отблагодарить меня в любой форме. :) Просто напишите мне. <b>Спасибо.</b> <br /><a href="mailto:macik.spb@gmail.com">macik.spb@gmail.com</a>';
+$L['info_desc'] ='Подключение базы SxGeo. Привязка IP адресов к гео-координатам';
+$L['info_notes'] = 'Оригинальная база адресов собрана авторами https://sypexgeo.net и распространяется под лицензией BSD.<br />'
+    . 'Если мои плагины приносят вам пользу вы можете отблагодарить меня в любой форме. :) Просто напишите мне. <b>Спасибо.</b><br />'
+    . '<a href="mailto:kalnovalexey@yandex.ru">kalnovalexey@yandex.ru</a>';
 
 $L['cfg_autoload'] =array('Автоматическая инициализация','В этом режиме данные по IP пользователя будут автоматически преобразованы в информацию о стране и городе. Включите, чтобы использовать данные через теги {PHP.sx_country} и {PHP.sx_city}.');
 $L['cfg_bulkrequests'] =array('Включить режим `множественных запросов`','Увеличивает скорость при большом количестве GeoIP запросов к базе, т.к. не очищает данные между вызовами функций.');
