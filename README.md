@@ -1,7 +1,11 @@
 SxGeo IP base
 ============
 
-Extension for Cotonti CMF. Integration of SxGeo IP base (geo names supplied in Russian)
+Extension for [Cotonti CMF](https://www.cotonti.com). Integration of SxGeo IP base (geo names supplied in English and Russian)
+
+Pligin authors: [Andrey Matsovkin](https://www.cotonti.com/users/Macik), [Kalnov Alexey](https://www.cotonti.com/users/Alex300)
+
+Plugin page: https://www.cotonti.com/extensions/mobile-geolocation/sxgeoip
 
 Description
 -----------
@@ -15,7 +19,7 @@ Features
 * Fast query speed
 * Country and city detection
 * Good data cover for ex-USSR area
-* All cities names in russian locale
+* All cities names in english and russian locales
 
 Disadvantages
 -------------
