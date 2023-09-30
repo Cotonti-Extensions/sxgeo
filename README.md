@@ -7,7 +7,7 @@ Description
 -----------
 
 Integration of SxGeoIP database in Cotonti CMF. This DB contains Geo coordinates related to user IP-address.
-SxGeoIP created, developed and maintained by http://sypexgeo.net/ and distributed under BSD licence.
+SxGeoIP created, developed and maintained by https://sypexgeo.net/ and distributed under BSD licence.
 
 Features
 --------
