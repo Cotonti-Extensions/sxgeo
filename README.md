@@ -24,7 +24,7 @@ Features
 DataBase updates
 -------------
 
-- You can see the database update date in the plugin here:https://github.com/Cotonti-Extensions/sxgeo/tree/master/plugins/sxgeo/data
+- You can see the database update date in the plugin here: https://github.com/Cotonti-Extensions/sxgeo/tree/master/plugins/sxgeo/data
 - Current SxGeo IP database version: https://sypexgeo.net/ru/download/
 
 Demo page
@@ -73,7 +73,7 @@ Examples:
 ```
 
 __Important notes!__  Country names are always geted in current Cotonti locale (user selected language),
-according to `countries.*.lang.php` file. City names are returned by plugin __always in russian__ 
+according to `countries.*.lang.php` file. City names are returned by plugin __in english or russian__ 
 (as it sored in SxGeoIP DB).
 
 2. You can turn on `Auto initialization mode`, so you can use direct values for current user country and city 
