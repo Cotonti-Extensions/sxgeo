@@ -3,7 +3,7 @@ SxGeo IP base
 
 Extension for [Cotonti CMF](https://www.cotonti.com). Integration of SxGeo IP base (geo names supplied in English and Russian)
 
-Pligin authors: [Andrey Matsovkin](https://www.cotonti.com/users/Macik), [Kalnov Alexey](https://www.cotonti.com/users/Alex300)
+Plugin authors: [Andrey Matsovkin](https://www.cotonti.com/users/Macik), [Kalnov Alexey](https://www.cotonti.com/users/Alex300)
 
 Plugin page: https://www.cotonti.com/extensions/mobile-geolocation/sxgeoip
 
@@ -21,20 +21,21 @@ Features
 * Good data cover for ex-USSR area
 * All cities names in english and russian locales
 
-Disadvantages
+DataBase updates
 -------------
 
-- last update dated srping 2013
+- You can see the database update date in the plugin here:https://github.com/Cotonti-Extensions/sxgeo/tree/master/plugins/sxgeo/data
+- Current SxGeo IP database version: https://sypexgeo.net/ru/download/
 
 Demo page
 ---------
 
-You can view demo page at http://sypexgeo.net/ site.
+You can view demo page at https://sypexgeo.net/ site.
 
 Requirements
 ------------
 
-Current version requires Cotonti Siena v0.9.x and newer.
+Current version requires Cotonti Siena v0.9.23 and newer.
 
 
 
@@ -47,7 +48,7 @@ Plugin works out from the box. For better results check config settings in admin
 
 Extension use GeoIP data packed in SxGeoIP format files. Country and city info stored in 
 separate files.
-More info about SxGeoIP format you can find on http://sypexgeo.net/.
+More info about SxGeoIP format you can find on https://sypexgeo.net/.
 
 
 Install
@@ -65,9 +66,11 @@ You can use this extension data in 2 ways:
 return string with Country and City name respectively.
 You can ommit IP address. In this case you get info according to current user info.
 
-		Examples:
-		{PHP|sx_getCity('8.8.8.8')}
-		{PHP.usr.ip|sx_getCountry($this)}
+Examples:
+```php
+{PHP|sx_getCity('8.8.8.8')}
+{PHP.usr.ip|sx_getCountry($this)}
+```
 
 __Important notes!__  Country names are always geted in current Cotonti locale (user selected language),
 according to `countries.*.lang.php` file. City names are returned by plugin __always in russian__ 
@@ -76,36 +79,32 @@ according to `countries.*.lang.php` file. City names are returned by plugin __al
 2. You can turn on `Auto initialization mode`, so you can use direct values for current user country and city 
 info.
 
-	Data format:
+Data format:
 
+```php
+/**
+ * Contains data for country code and id from last sx_getCountry*() call.
+ */
+$sx_country = [
+    'iso' => '', // ISO 3166-1 code in appear case
+    'name' => '', // Country name with Cotonti locale as defined in countries.*.lang.php file
+    'id'  => 0, // Country ID used in SxGeoIP base
+];
+
+/**
+ * Contains info about city from last sx_getCity*() call.
+ */
+$sx_city = [
+    'info' => [],  // basic info, see sx_getCity() function for details
+    'ext_info' => [], //extended info, see sx_getCityExt() function for details
+];
 ```
 
-	/**
-	* Contains data for country code and id from last sx_getCountry*() call.
-	*/
-	$sx_country = array(
-		'iso' => '', // ISO 3166-1 code in appear case
-		'name' => '', // Country name with Cotonti locale as defined in countries.*.lang.php file
-		'id'  => 0 // Country ID used in SxGeoIP base
-	);
-
-	/**
-	* Contains info about city from last sx_getCity*() call.
-	*/
-	$sx_city = array(
-		'info' => array(),  // basic info, see sx_getCity() function for details
-		'ext_info' => array() //extended info, see sx_getCityExt() function for details
-	);
-
+Use this calls in TPL:
 ```
-
-
-	Use this calls in TPL:
-	city - {PHP.sx_city.info.city}
-	country - {PHP.sx_country.name}
-
-
-
+city - {PHP.sx_city.info.city}
+country - {PHP.sx_country.name}
+```
 
 
 Licence
