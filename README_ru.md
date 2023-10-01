@@ -1,7 +1,7 @@
 SxGeo IP base
 =============
 
-Расширение для CMF Cotonti. Интеграция данных базы SxGeoIP.
+Расширение для [CMF Cotonti](https://www.cotonti.com). Интеграция данных базы SxGeoIP.
 
 Описание
 --------
@@ -19,22 +19,23 @@ SxGeo IP base
 * Хорошая точность определения по странам СНГ
 * База содержит названия населенных пунктов в русской транскрипции
 
-Недостатки
+Актуальность данных
 ----------
 
-- не обновлялась с весны 2013 года (хотя автор заявлял подготовку очередной версии)
+- Дату обновлени данных в плагине можно посмотреть тут: https://github.com/Cotonti-Extensions/sxgeo/tree/master/plugins/sxgeo/data
+- Текущая версия базы данных SxGeo IP: https://sypexgeo.net/ru/download/
 
 Демонстрация
 ------------
 
 Пример работы базы вы можете найти на странице разработчика базы по адресу:
-http://sypexgeo.net/
+https://sypexgeo.net/
 
 
 Требования
 ----------
 
-Cotonti Siena v0.9.x и более новые.
+Cotonti Siena v0.9.23 и более новые.
 
 
 ### Комментарии
@@ -46,7 +47,7 @@ Cotonti Siena v0.9.x и более новые.
 ### Устройство
 
 Используются данные о гео-привязке IP адресов, упакованные в файл формата SxGeoIP.
-Подробнее про формат смотри на сайте автора http://sypexgeo.net/.
+Подробнее про формат смотри на сайте автора https://sypexgeo.net/.
 Данные о стране и городе хранятся и извлекаются отдельно (из разных файлов).
 
 Установка
@@ -68,8 +69,8 @@ Cotonti Siena v0.9.x и более новые.
 		{PHP.usr.ip|sx_getCountry($this)}
 
 __Обратите внимание__, что название страны возвращается в текущей локали Cotonti (выбранной пользователем),
-исходя из определенного языкового файла `countries.*.lang.php`. Название города возвращается __всегда
-в русском варианте__, в том виде, как извлечено из файла SxGeoIP.
+исходя из определенного языкового файла `countries.*.lang.php`. Название города возвращается 
+__в русском или английском варианте__, в том виде, как извлечено из файла SxGeoIP.
 
 2. Если в настройках расширения включен режим `Автоматическая инициализация`, то в шаблонах
 можно использовать прямые обращения к сгенерированным для текущего пользователя данным.
@@ -79,21 +80,21 @@ __Обратите внимание__, что название страны во
 ```
 
 	/**
-	* Contains data for country code and id from last sx_getCountry*() call.
-	*/
-	$sx_country = array(
+	 * Contains data for country code and id from last sx_getCountry*() call.
+	 */
+	$sx_country = [
 		'iso' => '', // ISO 3166-1 code in appear case
 		'name' => '', // Country name with Cotonti locale as defined in countries.*.lang.php file
-		'id'  => 0 // Country ID used in SxGeoIP base
-	);
+		'id' => 0, // Country ID used in SxGeoIP base
+	];
 
 	/**
-	* Contains info about city from last sx_getCity*() call.
-	*/
-	$sx_city = array(
-		'info' => array(),  // basic info, see sx_getCity() function for details
-		'ext_info' => array() //extended info, see sx_getCityExt() function for details
-	);
+	 * Contains info about city from last sx_getCity*() call.
+	 */
+	$sx_city = [
+		'info' => [],  // basic info, see sx_getCity() function for details
+		'ext_info' => [], //extended info, see sx_getCityExt() function for details
+	];
 
 ```
 
