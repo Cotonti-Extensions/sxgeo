@@ -7,7 +7,7 @@ Extension for Cotonti CMF. Integration of SxGeo IP base
 Changelog
 ---------
 
-### 1.0.2 (2023-Sep-30)
+### v1.0.2 (2023-Sep-30)
 * Compatible with PHP 8.1
 * Database update
 
